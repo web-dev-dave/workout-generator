@@ -2,6 +2,7 @@
 const OpenAI = require('openai');
 const express = require('express');
 const cors = require('cors'); // Import the cors middleware
+const config = require('./config');
 const app = express();
 
 app.use(express.json());
@@ -9,7 +10,7 @@ app.use(express.json());
 // Enable CORS for all routes
 app.use(cors());
 
-const OPENAI_API_KEY = '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';
+const OPENAI_API_KEY = config.openaiApiKey;
 
 const openai = new OpenAI({ apiKey: OPENAI_API_KEY});
 
@@ -24,11 +25,11 @@ app.post('/generate-workout', async (req, res) => {
     const chatCompletion = await openai.chat.completions.create({
       model: "gpt-3.5-turbo",
       messages: [
-        {"role": "system", "content": "You are a helpful assistant."},
+        {"role": "system", "content": "You are a CrossFit enthusiast."},
         {"role": "user", "content": prompt}
       ],
     });
-    console.log(chatCompletion.choices[0].message);
+    console.log(chatCompletion);
 
     // Extract and send the generated workout from the GPT response
     const generatedWorkout = chatCompletion.choices[0].message.content;
