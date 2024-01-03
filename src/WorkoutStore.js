@@ -1,7 +1,7 @@
 import { makeAutoObservable } from 'mobx';
 
 class WorkoutStore {
-  movements = [];
+  movements = '';
   timeDomain = '';
   rounds = '';
 
