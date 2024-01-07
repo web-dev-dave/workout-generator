@@ -1,6 +1,40 @@
+/* Import Tailwind CSS first */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+font-face {
+  font-family: 'Nacelle';
+  src: url('nacelle_100/Nacelle-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Nacelle';
+  src: url('nacelle_100/Nacelle-SemiBold.otf') format('opentype');
+  font-weight: 600; /* 600 is typically semibold */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Nacelle';
+  src: url('nacelle_100/Nacelle-Italic.otf') format('opentype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Nacelle';
+  src: url('nacelle_100/Nacelle-SemiBoldItalic.otf') format('opentype');
+  font-weight: 600;
+  font-style: italic;
+}
+
 body {
+  background-color: #BAD6E5;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Nacelle', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -8,6 +42,6 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: 'Nacelle', source-code-pro, Menlo, Monaco, Consolas,
     monospace;
 }
